@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast API 🤗 Space served with Uvicorn</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <script type="module" src="static/index.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Fast API 🤗 Space served with Uvicorn</h1>
+      <section id="text-gen">
+        <h2>Text generation from transformers library</h2>
+        <p>
+          Model:
+          <a
+            href="http://127.0.0.1:8000/essays"
+            rel="noreferrer"
+            target="_blank"
+            >GPT2</a
+          >
+        </p>
+        <form class="text-gen-form">
+          <label for="text-gen-input">Text prompt</label>
+          <input
+            id="text-gen-input"
+            type="text"
+            placeholder="Text to generate"
+            value=""
+          />
+          <!-- <textarea
+            id="text-gen-input"
+            type="text"
+            placeholder="Text to generate"
+            value=""
+          >
+          </textarea> -->
+          <button id="text-gen-submit">Submit</button>
+          <p class="text-gen-output"></p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
