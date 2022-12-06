@@ -1,4 +1,4 @@
-from model import get_prediction
+from model import generate_text
 
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
@@ -16,7 +16,7 @@ def index() -> FileResponse:
 
 
 @app.get("/essays")
-def generate_text(input):
-    output = get_prediction(input)
-
+def get_text(question,keywords):
+    output = generate_text(question,keywords)
+    
     return output
