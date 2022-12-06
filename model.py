@@ -8,6 +8,7 @@ from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline,
 import os
 from datetime import datetime
 from dotenv import load_dotenv, find_dotenv
+import unicodedata
 
 load_dotenv(find_dotenv())
 seed = int(os.environ.get("SEED"))
@@ -45,6 +46,13 @@ def generate_text(question: str, keywords: str):
     save_txt(question, genText)
     return genText
 
+def clean_filename(filename):
+    
+    forbidden_chars = '"*\\/\'.|?:<>'
+    filename = ''.join([x if x not in forbidden_chars else '#' for x in filename])
+    if len(filename) >= 176:
+        filename = filename[:170] + '...'
+    return filename
 
 def save_txt(title, txt):
     dirName = 'answers'
@@ -55,7 +63,7 @@ def save_txt(title, txt):
     else:
         print("Directory ", dirName,  " already exists")
         
-    
+    title = clean_filename(title)
     current_dateTime = datetime.now()
     current_time= "{:%B %d, %Y}".format(current_dateTime)
     name = dirName+'/'+current_time+title+'.txt'
