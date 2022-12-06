@@ -1,1 +1,0 @@
-=trees and larch_top_depth = 0 lz_min_depth = 1 oll_max_depth = 4 oll_max_depth = 6 oll_max_depth = 6 dsp_ratio =

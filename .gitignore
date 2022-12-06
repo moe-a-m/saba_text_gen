@@ -1,3 +1,8 @@
 # virtualenv
 textgen_venv
+
+# settings
 .env
+
+# outputs
+answers
