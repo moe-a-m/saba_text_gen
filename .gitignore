@@ -6,3 +6,6 @@ textgen_venv
 
 # outputs
 answers
+
+# cache
+__pycache__
